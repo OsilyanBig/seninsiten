@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /gizlilik-politikasi.html
 
 Sitemap: https://seninsiten.vercel.app/sitemap.xml
