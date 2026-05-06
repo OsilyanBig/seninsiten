@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazla Mesai Ücreti Hesaplama 2025</title>
+    <meta name="description" content="2025 yılı fazla mesai ücreti hesaplama. Saatlik ücretinize göre fazla mesai tutarınızı hesaplayın.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://seninsiten.vercel.app/fazla-mesai.html">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav>
+    <span class="logo">💰 MaaşHesapla</span>
+    <a href="/">Ana Sayfa</a>
+    <a href="/kidem-tazminati.html">Kıdem Tazminatı</a>
+    <a href="/fazla-mesai.html">Fazla Mesai</a>
+    <a href="/ihbar-tazminati.html">İhbar Tazminatı</a>
+    <a href="/gelir-vergisi-dilimleri-2025.html">Vergi Dilimleri</a>
+</nav>
+
+<div class="page-header">
+    <h1>⏰ Fazla Mesai Ücreti Hesaplama</h1>
+    <p>Saatlik ücretinize göre fazla mesai tutarınızı hesaplayın</p>
+    <span class="year-badge">📅 2025 Güncel</span>
+</div>
+
+<div class="container">
+    <div class="card">
+
+        <div class="form-group">
+            <label>Aylık Brüt Maaş (₺)</label>
+            <div class="input-wrapper">
+                <input type="number" id="maas" placeholder="Örn: 50000">
+                <span class="currency">₺</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Fazla Mesai Saati</label>
+            <div class="input-wrapper">
+                <input type="number" id="saat" placeholder="Örn: 10">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Mesai Türü</label>
+            <div class="input-wrapper">
+                <select id="tur">
+                    <option value="1.5">Normal Fazla Mesai (%50 zamlı)</option>
+                    <option value="2">Hafta Sonu / Tatil Mesaisi (%100 zamlı)</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="calc-btn" onclick="hesapla()">🧮 Hesapla</button>
+    </div>
+
+    <div class="card result-card" id="result-card">
+        <div class="result-header">
+            <h2>Fazla Mesai Ücretiniz</h2>
+            <div class="result-amount" id="result-amount">₺0</div>
+        </div>
+
+        <table class="detail-table">
+            <tr class="highlight">
+                <td>Aylık Brüt Maaş</td>
+                <td id="r-maas">₺0</td>
+            </tr>
+            <tr>
+                <td>Saatlik Normal Ücret</td>
+                <td id="r-saatlik">₺0</td>
+            </tr>
+            <tr>
+                <td>Fazla Mesai Saati</td>
+                <td id="r-saat">0 Saat</td>
+            </tr>
+            <tr>
+                <td>Uygulanan Çarpan</td>
+                <td id="r-carpan">x1.5</td>
+            </tr>
+            <tr class="total">
+                <td>Toplam Fazla Mesai Ücreti</td>
+                <td id="r-toplam">₺0</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="faq-section" style="margin-top:30px;">
+        <h2>❓ Fazla Mesai Hakkında</h2>
+
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Fazla mesai ücreti nasıl hesaplanır?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Fazla mesai ücreti, saatlik normal ücretin %50 fazlasıyla hesaplanır. Hafta tatili ve ulusal bayramlarda yapılan çalışmalar için bu oran %100'e çıkmaktadır.</p>
+            </div>
+        </article>
+
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Yıllık fazla mesai sınırı nedir?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>İş Kanunu'na göre yıllık fazla mesai süresi 270 saati geçemez. Bu süreyi aşan çalışmalar için işçinin onayı alınmalıdır.</p>
+            </div>
+        </article>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 MaaşHesapla |
+        <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+        <a href="/hakkimizda.html">Hakkımızda</a>
+        <a href="/iletisim.html">İletişim</a>
+    </p>
+</footer>
+
+<script>
+    function hesapla() {
+        const maas = parseFloat(document.getElementById('maas').value);
+        const saat = parseFloat(document.getElementById('saat').value);
+        const tur = parseFloat(document.getElementById('tur').value);
+
+        if (!maas || !saat || maas <= 0 || saat <= 0) {
+            alert('Lütfen tüm alanları doldurun.');
+            return;
+        }
+
+        const saatlikUcret = maas / 225;
+        const toplam = saatlikUcret * tur * saat;
+
+        const fmt = (n) => '₺' + n.toLocaleString('tr-TR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        document.getElementById('result-card').classList.add('show');
+        document.getElementById('result-amount').textContent = fmt(toplam);
+        document.getElementById('r-maas').textContent = fmt(maas);
+        document.getElementById('r-saatlik').textContent = fmt(saatlikUcret);
+        document.getElementById('r-saat').textContent = saat + ' Saat';
+        document.getElementById('r-carpan').textContent = 'x' + tur;
+        document.getElementById('r-toplam').textContent = fmt(toplam);
+
+        document.getElementById('result-card').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleFaq(el) {
+        el.parentElement.classList.toggle('open');
+    }
+</script>
+
+</body>
+</html>
