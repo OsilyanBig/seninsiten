@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kıdem Tazminatı Hesaplama 2025 | Güncel Hesaplayıcı</title>
+    <meta name="description" content="2025 yılı kıdem tazminatı hesaplama aracı. Çalışma süreniz ve brüt maaşınıza göre kıdem tazminatınızı hesaplayın.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://seninsiten.vercel.app/kidem-tazminati.html">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav>
+    <span class="logo">💰 MaaşHesapla</span>
+    <a href="/">Ana Sayfa</a>
+    <a href="/kidem-tazminati.html">Kıdem Tazminatı</a>
+    <a href="/fazla-mesai.html">Fazla Mesai</a>
+    <a href="/ihbar-tazminati.html">İhbar Tazminatı</a>
+    <a href="/gelir-vergisi-dilimleri-2025.html">Vergi Dilimleri</a>
+</nav>
+
+<div class="page-header">
+    <h1>📋 Kıdem Tazminatı Hesaplama</h1>
+    <p>Çalışma süreniz ve maaşınıza göre kıdem tazminatınızı hesaplayın</p>
+    <span class="year-badge">📅 2025 Güncel</span>
+</div>
+
+<div class="container">
+    <div class="card">
+
+        <div class="form-group">
+            <label>Brüt Maaş (₺)</label>
+            <div class="input-wrapper">
+                <input type="number" id="maas" placeholder="Örn: 50000">
+                <span class="currency">₺</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Çalışma Süresi (Yıl)</label>
+            <div class="input-wrapper">
+                <input type="number" id="yil" placeholder="Örn: 5">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Çalışma Süresi (Ay) <span class="info">Tam yıla ek ay varsa</span></label>
+            <div class="input-wrapper">
+                <input type="number" id="ay" placeholder="Örn: 6" min="0" max="11">
+            </div>
+        </div>
+
+        <button class="calc-btn" onclick="hesapla()">🧮 Hesapla</button>
+    </div>
+
+    <div class="card result-card" id="result-card">
+        <div class="result-header">
+            <h2>Kıdem Tazminatınız</h2>
+            <div class="result-amount" id="result-amount">₺0</div>
+        </div>
+
+        <table class="detail-table">
+            <tr class="highlight">
+                <td>Brüt Maaş</td>
+                <td id="r-maas">₺0</td>
+            </tr>
+            <tr>
+                <td>Toplam Çalışma Süresi</td>
+                <td id="r-sure">0 Yıl</td>
+            </tr>
+            <tr>
+                <td>Kıdem Tazminatı Tavanı (2025)</td>
+                <td>₺35.058,58</td>
+            </tr>
+            <tr class="total">
+                <td>Hesaplanan Kıdem Tazminatı</td>
+                <td id="r-tazminat">₺0</td>
+            </tr>
+        </table>
+
+        <div style="margin-top:20px;padding:15px;background:rgba(0,210,255,0.05);border-radius:12px;border:1px solid rgba(0,210,255,0.1);">
+            <p style="color:#9a9ab0;font-size:0.9rem;line-height:1.7;">
+                ⚠️ Bu hesaplama tahmini olup bilgilendirme amaçlıdır.
+                Kıdem tazminatı tavanı her yıl güncellenmektedir.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-section" style="margin-top:30px;">
+        <h2>❓ Kıdem Tazminatı Hakkında</h2>
+
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Kıdem tazminatına kim hak kazanır?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>En az 1 yıl çalışmış olan işçiler, işveren tarafından işten çıkarılmaları, emeklilik, askerlik veya kadın işçilerin evlenmesi durumunda kıdem tazminatına hak kazanır.</p>
+            </div>
+        </article>
+
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Kıdem tazminatı nasıl hesaplanır?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Her tam çalışma yılı için 30 günlük brüt maaş tutarında ödeme yapılır. Kısmi yıllar için orantılı hesaplama yapılır. Ancak ödenecek tutar kıdem tazminatı tavanını aşamaz.</p>
+            </div>
+        </article>
+
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>2025 kıdem tazminatı tavanı nedir?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>2025 yılı için kıdem tazminatı tavanı 35.058,58 TL olarak belirlenmiştir. Bu tavan her altı ayda bir güncellenmektedir.</p>
+            </div>
+        </article>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2025 MaaşHesapla |
+        <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+        <a href="/hakkimizda.html">Hakkımızda</a>
+        <a href="/iletisim.html">İletişim</a>
+    </p>
+</footer>
+
+<script>
+    const KIDEM_TAVAN = 35058.58;
+
+    function hesapla() {
+        const maas = parseFloat(document.getElementById('maas').value);
+        const yil = parseFloat(document.getElementById('yil').value) || 0;
+        const ay = parseFloat(document.getElementById('ay').value) || 0;
+
+        if (!maas || maas <= 0) {
+            alert('Lütfen geçerli bir maaş girin.');
+            return;
+        }
+        if (yil <= 0 && ay <= 0) {
+            alert('Lütfen çalışma süresini girin.');
+            return;
+        }
+
+        const toplamAy = (yil * 12) + ay;
+        const toplamYil = toplamAy / 12;
+        const gunlukUcret = Math.min(maas, KIDEM_TAVAN) / 30;
+        const tazminat = gunlukUcret * 30 * toplamYil;
+
+        const fmt = (n) => '₺' + n.toLocaleString('tr-TR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        document.getElementById('result-card').classList.add('show');
+        document.getElementById('result-amount').textContent = fmt(tazminat);
+        document.getElementById('r-maas').textContent = fmt(maas);
+        document.getElementById('r-sure').textContent =
+            yil + ' Yıl ' + (ay > 0 ? ay + ' Ay' : '');
+        document.getElementById('r-tazminat').textContent = fmt(tazminat);
+
+        document.getElementById('result-card').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleFaq(el) {
+        el.parentElement.classList.toggle('open');
+    }
+</script>
+
+</body>
+</html>
