@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İhbar Tazminatı Hesaplama 2025</title>
+    <meta name="description" content="2025 ihbar tazminatı hesaplama aracı. Çalışma sürenize göre ihbar sürenizi ve tazminatınızı öğrenin.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://seninsiten.vercel.app/ihbar-tazminati.html">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav>
+    <span class="logo">💰 MaaşHesapla</span>
+    <a href="/">Ana Sayfa</a>
+    <a href="/kidem-tazminati.html">Kıdem Tazminatı</a>
+    <a href="/fazla-mesai.html">Fazla Mesai</a>
+    <a href="/ihbar-tazminati.html">İhbar Tazminatı</a>
+    <a href="/gelir-vergisi-dilimleri-2025.html">Vergi Dilimleri</a>
+</nav>
+
+<div class="page-header">
+    <h1>📝 İhbar Tazminatı Hesaplama</h1>
+    <p>Çalışma sürenize göre ihbar tazminatınızı hesaplayın</p>
+    <span class="year-badge">📅 2025 Güncel</span>
+</div>
+
+<div class="container">
+    <div class="card">
+
+        <div class="form-group">
+            <label>Brüt Maaş (₺)</label>
+            <div class="input-wrapper">
+                <input type="number" id="maas" placeholder="Örn: 50000">
+                <span class="currency">₺</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Çalışma Süresi (Yıl)</label>
+            <div class="input-wrapper">
+                <select id="sure">
+                    <option value="2">6 aydan az</option>
+                    <option value="4">6 ay - 1.5 yıl arası</option>
+                    <option value="6">1.5 yıl - 3 yıl arası</option>
+                    <option value="8">3 yıldan fazla</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="calc-btn" onclick="hesapla()">🧮 Hesapla</button>
+    </div>
+
+    <div class="card result-card" id="result-card">
+        <div class="result-header">
+            <h2>İhbar Tazminatınız</h2>
+            <div class="result-amount" id="result-amount">₺0</div>
+        </div>
+
+        <table class="detail-table">
+            <tr class="highlight">
+                <td>Brüt Maaş</td>
+                <td id="r-maas">₺0</td>
+            </tr>
+            <tr>
+                <td>İhbar Süresi</td>
+                <td id="r-sure">0 Hafta</td>
+            </tr>
+            <tr>
+                <td>Günlük Ücret</td>
+                <td id="r-gunluk">₺0</td>
+            </tr>
+            <tr class="total">
+                <td>Toplam İhbar Tazminatı</td>
+                <td id="r-toplam">₺0</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="faq-section" style="margin-top:30px;">
+        <h2>❓ İhbar Tazminatı Hakkında</h2>
+
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>İhbar süreleri nelerdir?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>İş Kanunu'na göre: 6 aydan az çalışmada 2 hafta, 6 ay - 1.5 yıl arası 4 hafta, 1.5 yıl - 3 yıl arası 6 hafta, 3 yıldan fazla çalışmada 8 hafta ihbar süresi uygulanır.</p>
+            </div>
+        </article>
+
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>İhbar tazminatı vergiye tabi midir?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>İhbar tazminatı gelir vergisine ve damga vergisine tabidir. Ancak SGK primine tabi tutulmaz.</p>
+            </div>
+        </article>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 MaaşHesapla |
+        <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+        <a href="/hakkimizda.html">Hakkımızda</a>
+        <a href="/iletisim.html">İletişim</a>
+    </p>
+</footer>
+
+<script>
+    function hesapla() {
+        const maas = parseFloat(document.getElementById('maas').value);
+        const hafta = parseInt(document.getElementById('sure').value);
+
+        if (!maas || maas <= 0) {
+            alert('Lütfen geçerli bir maaş girin.');
+            return;
+        }
+
+        const gunlukUcret = maas / 30;
+        const toplam = gunlukUcret * hafta * 7;
+
+        const fmt = (n) => '₺' + n.toLocaleString('tr-TR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        document.getElementById('result-card').classList.add('show');
+        document.getElementById('result-amount').textContent = fmt(toplam);
+        document.getElementById('r-maas').textContent = fmt(maas);
+        document.getElementById('r-sure').textContent = hafta + ' Hafta';
+        document.getElementById('r-gunluk').textContent = fmt(gunlukUcret);
+        document.getElementById('r-toplam').textContent = fmt(toplam);
+
+        document.getElementById('result-card').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleFaq(el) {
+        el.parentElement.classList.toggle('open');
+    }
+</script>
+
+</body>
+</html>
