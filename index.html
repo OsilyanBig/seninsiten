@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO META TAGLAR -->
     <title>Maaş Brüt Net Hesaplayıcı 2025 | Güncel Vergi Oranları</title>
     <meta name="description" content="2025 yılı güncel vergi oranlarıyla brüt maaştan net maaş, net maaştan brüt maaş hesaplama. SGK, gelir vergisi, damga vergisi otomatik hesaplama aracı.">
-    <meta name="keywords" content="brüt net hesaplama, maaş hesaplama, brüt maaş hesaplama, net maaş hesaplama, SGK kesintisi, gelir vergisi hesaplama, 2025 maaş hesaplayıcı, maaş hesaplayıcı">
-    <meta name="author" content="Maaş Hesaplayıcı">
+    <meta name="keywords" content="brüt net hesaplama, maaş hesaplama, brüt maaş hesaplama, net maaş hesaplama, SGK kesintisi, gelir vergisi hesaplama, 2025 maaş hesaplayıcı">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://seninsiten.vercel.app/">
-
-    <!-- Open Graph (Sosyal medya paylaşımı için) -->
     <meta property="og:title" content="Maaş Brüt Net Hesaplayıcı 2025">
-    <meta property="og:description" content="Güncel vergi oranlarıyla brüt-net maaş hesaplama aracı">
+    <meta property="og:description" content="2025 güncel vergi oranlarıyla brüt-net maaş hesaplama aracı.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://seninsiten.vercel.app/">
-
-    <!-- Schema Markup (Google zengin sonuç) -->
+    <link rel="stylesheet" href="/style.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -35,857 +29,372 @@
         }
     }
     </script>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            min-height: 100vh;
-            color: #e0e0e0;
-        }
-
-        /* Header */
-        header {
-            text-align: center;
-            padding: 40px 20px 20px;
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            background: linear-gradient(90deg, #00d2ff, #7b2ff7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
-        }
-
-        header p {
-            color: #9a9ab0;
-            font-size: 1.05rem;
-        }
-
-        .year-badge {
-            display: inline-block;
-            background: linear-gradient(90deg, #7b2ff7, #00d2ff);
-            color: white;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        /* Card */
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 25px;
-        }
-
-        /* Hesaplama Yönü Toggle */
-        .direction-toggle {
-            display: flex;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            padding: 5px;
-            margin-bottom: 30px;
-        }
-
-        .toggle-btn {
-            flex: 1;
-            padding: 14px;
-            border: none;
-            border-radius: 12px;
-            background: transparent;
-            color: #9a9ab0;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .toggle-btn.active {
-            background: linear-gradient(135deg, #7b2ff7, #4a00e0);
-            color: white;
-            box-shadow: 0 4px 20px rgba(123, 47, 247, 0.4);
-        }
-
-        /* Form */
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #b8b8d0;
-            font-size: 0.95rem;
-        }
-
-        .form-group label .info {
-            font-size: 0.8rem;
-            color: #6a6a8a;
-        }
-
-        .input-wrapper {
-            position: relative;
-        }
-
-        .input-wrapper input, .input-wrapper select {
-            width: 100%;
-            padding: 15px 20px;
-            padding-right: 50px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
-            font-size: 1.1rem;
-            transition: border-color 0.3s;
-            outline: none;
-        }
-
-        .input-wrapper input:focus, .input-wrapper select:focus {
-            border-color: #7b2ff7;
-        }
-
-        .input-wrapper .currency {
-            position: absolute;
-            right: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #6a6a8a;
-            font-weight: 600;
-        }
-
-        .input-wrapper select {
-            padding-right: 20px;
-            cursor: pointer;
-        }
-
-        .input-wrapper select option {
-            background: #1a1a2e;
-            color: white;
-        }
-
-        /* Checkbox */
-        .checkbox-group {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-        }
-
-        .checkbox-item input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            accent-color: #7b2ff7;
-            cursor: pointer;
-        }
-
-        /* Button */
-        .calc-btn {
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #7b2ff7, #00d2ff);
-            color: white;
-            font-size: 1.15rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 10px;
-        }
-
-        .calc-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(123, 47, 247, 0.5);
-        }
-
-        .calc-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Sonuç */
-        .result-card {
-            display: none;
-        }
-
-        .result-card.show {
-            display: block;
-        }
-
-        .result-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .result-header h2 {
-            font-size: 1.3rem;
-            color: #b8b8d0;
-            margin-bottom: 10px;
-        }
-
-        .result-amount {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #00d2ff, #7b2ff7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .result-amount .small {
-            font-size: 1.5rem;
-        }
-
-        /* Detay Tablosu */
-        .detail-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .detail-table tr {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .detail-table tr:last-child {
-            border-bottom: none;
-        }
-
-        .detail-table td {
-            padding: 14px 5px;
-        }
-
-        .detail-table td:first-child {
-            color: #9a9ab0;
-        }
-
-        .detail-table td:last-child {
-            text-align: right;
-            font-weight: 600;
-            color: #e0e0e0;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .detail-table tr.highlight td {
-            color: #00d2ff;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding-top: 18px;
-        }
-
-        .detail-table tr.total td {
-            color: #7b2ff7;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border-top: 2px solid rgba(123, 47, 247, 0.3);
-            padding-top: 18px;
-        }
-
-        .detail-table tr.negative td:last-child {
-            color: #ff6b6b;
-        }
-
-        /* Vergi Dilimi Göstergesi */
-        .tax-bracket {
-            margin-top: 25px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 14px;
-        }
-
-        .tax-bracket h3 {
-            color: #b8b8d0;
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-
-        .bracket-bar {
-            height: 10px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .bracket-fill {
-            height: 100%;
-            border-radius: 5px;
-            background: linear-gradient(90deg, #00d2ff, #7b2ff7, #ff6b6b);
-            transition: width 0.5s ease;
-        }
-
-        .bracket-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            color: #6a6a8a;
-        }
-
-        /* SSS Bölümü */
-        .faq-section {
-            margin-top: 30px;
-        }
-
-        .faq-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #e0e0e0;
-            text-align: center;
-        }
-
-        .faq-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 14px;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 18px 22px;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s;
-        }
-
-        .faq-question:hover {
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .faq-question .arrow {
-            transition: transform 0.3s;
-            font-size: 1.2rem;
-        }
-
-        .faq-item.open .faq-question .arrow {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-answer p {
-            padding: 0 22px 18px;
-            color: #9a9ab0;
-            line-height: 1.7;
-        }
-
-        .faq-item.open .faq-answer {
-            max-height: 300px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #4a4a6a;
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: #7b2ff7;
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.6rem;
-            }
-
-            .card {
-                padding: 22px;
-            }
-
-            .result-amount {
-                font-size: 2.2rem;
-            }
-
-            .checkbox-group {
-                flex-direction: column;
-                gap: 12px;
-            }
-        }
-    </style>
 </head>
 <body>
 
-    <header>
-        <h1>💰 Maaş Brüt / Net Hesaplayıcı</h1>
-        <p>Türkiye için güncel vergi oranlarıyla maaş hesaplama aracı</p>
-        <span class="year-badge">📅 2025 Güncel</span>
-    </header>
+<nav>
+    <span class="logo">💰 MaaşHesapla</span>
+    <a href="/">Ana Sayfa</a>
+    <a href="/kidem-tazminati.html">Kıdem Tazminatı</a>
+    <a href="/fazla-mesai.html">Fazla Mesai</a>
+    <a href="/ihbar-tazminati.html">İhbar Tazminatı</a>
+    <a href="/gelir-vergisi-dilimleri-2025.html">Vergi Dilimleri</a>
+</nav>
 
-    <div class="container">
+<div class="page-header">
+    <h1>💰 Maaş Brüt / Net Hesaplayıcı</h1>
+    <p>Türkiye için güncel vergi oranlarıyla maaş hesaplama aracı</p>
+    <span class="year-badge">📅 2025 Güncel</span>
+</div>
 
-        <!-- Hesaplama Kartı -->
-        <div class="card">
-            <!-- Yön Seçimi -->
-            <div class="direction-toggle">
-                <button class="toggle-btn active" onclick="setDirection('brut-net')" id="btn-brut-net">
-                    Brüt → Net
-                </button>
-                <button class="toggle-btn" onclick="setDirection('net-brut')" id="btn-net-brut">
-                    Net → Brüt
-                </button>
-            </div>
+<div class="container">
 
-            <!-- Maaş Girişi -->
-            <div class="form-group">
-                <label id="salary-label">Brüt Maaş Tutarı</label>
-                <div class="input-wrapper">
-                    <input type="number" id="salary" placeholder="Örn: 50000" min="0">
-                    <span class="currency">₺</span>
-                </div>
-            </div>
-
-            <!-- Yıl Seçimi -->
-            <div class="form-group">
-                <label>Hesaplama Yılı</label>
-                <div class="input-wrapper">
-                    <select id="year">
-                        <option value="2025" selected>2025</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Kümülatif Vergi Matrahı (Ay Seçimi) -->
-            <div class="form-group">
-                <label>Hesaplama Ayı <span class="info">(Kümülatif vergi matrahı için)</span></label>
-                <div class="input-wrapper">
-                    <select id="month">
-                        <option value="1">Ocak (1. ay)</option>
-                        <option value="2">Şubat (2. ay)</option>
-                        <option value="3">Mart (3. ay)</option>
-                        <option value="4">Nisan (4. ay)</option>
-                        <option value="5">Mayıs (5. ay)</option>
-                        <option value="6">Haziran (6. ay)</option>
-                        <option value="7">Temmuz (7. ay)</option>
-                        <option value="8">Ağustos (8. ay)</option>
-                        <option value="9">Eylül (9. ay)</option>
-                        <option value="10">Ekim (10. ay)</option>
-                        <option value="11">Kasım (11. ay)</option>
-                        <option value="12">Aralık (12. ay)</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Ek Seçenekler -->
-            <div class="form-group">
-                <label>Ek Seçenekler</label>
-                <div class="checkbox-group">
-                    <label class="checkbox-item">
-                        <input type="checkbox" id="agimin" checked>
-                        AGİ (Asgari Geçim İndirimi) uygulansın
-                    </label>
-                    <label class="checkbox-item">
-                        <input type="checkbox" id="disabled">
-                        Engelli indirimi var
-                    </label>
-                </div>
-            </div>
-
-            <button class="calc-btn" onclick="calculate()">
-                🧮 Hesapla
+    <div class="card">
+        <div class="direction-toggle">
+            <button class="toggle-btn active" onclick="setDirection('brut-net')" id="btn-brut-net">
+                Brüt → Net
+            </button>
+            <button class="toggle-btn" onclick="setDirection('net-brut')" id="btn-net-brut">
+                Net → Brüt
             </button>
         </div>
 
-        <!-- Sonuç Kartı -->
-        <div class="card result-card" id="result-card">
-            <div class="result-header">
-                <h2 id="result-title">Net Maaşınız</h2>
-                <div class="result-amount" id="result-amount">₺0</div>
-            </div>
-
-            <table class="detail-table">
-                <tr class="highlight">
-                    <td>Brüt Maaş</td>
-                    <td id="r-brut">₺0</td>
-                </tr>
-                <tr class="negative">
-                    <td>SGK İşçi Payı (%14)</td>
-                    <td id="r-sgk">-₺0</td>
-                </tr>
-                <tr class="negative">
-                    <td>İşsizlik Sigortası İşçi Payı (%1)</td>
-                    <td id="r-issizlik">-₺0</td>
-                </tr>
-                <tr>
-                    <td>Gelir Vergisi Matrahı</td>
-                    <td id="r-matrah">₺0</td>
-                </tr>
-                <tr class="negative">
-                    <td>Gelir Vergisi</td>
-                    <td id="r-gelir">-₺0</td>
-                </tr>
-                <tr class="negative">
-                    <td>Damga Vergisi (%0.759)</td>
-                    <td id="r-damga">-₺0</td>
-                </tr>
-                <tr>
-                    <td>Toplam Kesinti</td>
-                    <td id="r-toplam-kesinti">₺0</td>
-                </tr>
-                <tr class="total">
-                    <td id="r-net-label">Net Maaş</td>
-                    <td id="r-net">₺0</td>
-                </tr>
-            </table>
-
-            <!-- İşveren Maliyeti -->
-            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);">
-                <table class="detail-table">
-                    <tr>
-                        <td style="color: #6a6a8a; font-size: 0.9rem;" colspan="2">
-                            İşveren Tarafı
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>SGK İşveren Payı (%15.5)</td>
-                        <td id="r-sgk-isveren">₺0</td>
-                    </tr>
-                    <tr>
-                        <td>İşsizlik Sigortası İşveren Payı (%2)</td>
-                        <td id="r-issizlik-isveren">₺0</td>
-                    </tr>
-                    <tr class="total">
-                        <td>Toplam İşveren Maliyeti</td>
-                        <td id="r-isveren-maliyet">₺0</td>
-                    </tr>
-                </table>
-            </div>
-
-            <!-- Vergi Dilimi -->
-            <div class="tax-bracket">
-                <h3>📊 Gelir Vergisi Dilimi</h3>
-                <div class="bracket-bar">
-                    <div class="bracket-fill" id="bracket-fill" style="width: 0%"></div>
-                </div>
-                <div class="bracket-labels">
-                    <span>%15</span>
-                    <span>%20</span>
-                    <span>%27</span>
-                    <span>%35</span>
-                    <span>%40</span>
-                </div>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: #9a9ab0;" id="bracket-text">
-                    Vergi diliminiz hesaplandıktan sonra burada görünecek.
-                </p>
+        <div class="form-group">
+            <label id="salary-label">Brüt Maaş Tutarı</label>
+            <div class="input-wrapper">
+                <input type="number" id="salary" placeholder="Örn: 50000" min="0">
+                <span class="currency">₺</span>
             </div>
         </div>
 
-        <!-- SSS (SEO için çok önemli) -->
-        <div class="faq-section">
-            <h2>❓ Sıkça Sorulan Sorular</h2>
-
-            <article class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Brüt maaş ile net maaş arasındaki fark nedir?</span>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Brüt maaş, herhangi bir kesinti yapılmadan önceki toplam maaş tutarıdır. Net maaş ise SGK primi, gelir vergisi ve damga vergisi gibi yasal kesintiler düşüldükten sonra elinize geçen tutardır. 2025 yılında brüt maaştan net maaşa geçişte yaklaşık %25-35 oranında kesinti uygulanmaktadır.</p>
-                </div>
-            </article>
-
-            <article class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>2025 yılı gelir vergisi dilimleri nelerdir?</span>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>2025 yılı gelir vergisi dilimleri: 158.000 TL'ye kadar %15, 330.000 TL'ye kadar %20, 800.000 TL'ye kadar %27, 4.300.000 TL'ye kadar %35, 4.300.000 TL üzeri %40 oranında uygulanmaktadır. Bu dilimler kümülatif vergi matrahına göre hesaplanır.</p>
-                </div>
-            </article>
-
-            <article class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>SGK kesintisi nasıl hesaplanır?</span>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>SGK işçi payı brüt maaşın %14'ü, işsizlik sigortası işçi payı ise %1'i oranında kesilir. İşveren tarafında ise SGK payı %15.5, işsizlik sigortası %2 olarak hesaplanır. SGK primine esas kazanç tavanı 2025 yılı için aylık olarak belirlenmiştir.</p>
-                </div>
-            </article>
-
-            <article class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>AGİ (Asgari Geçim İndirimi) nedir?</span>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>AGİ, çalışanların asgari geçim düzeyindeki gelirlerinin vergilendirilmemesi için uygulanan bir indirimdir. Medeni durum ve çocuk sayısına göre değişen AGİ tutarı, hesaplanan gelir vergisinden düşülür. 2025 yılında AGİ uygulaması devam etmektedir.</p>
-                </div>
-            </article>
-
-            <article class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Damga vergisi oranı nedir?</span>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Maaş bordrosunda uygulanan damga vergisi oranı binde 7.59'dur (%0.759). Bu oran brüt maaş üzerinden hesaplanır ve net maaştan düşülür.</p>
-                </div>
-            </article>
+        <div class="form-group">
+            <label>Hesaplama Ayı <span class="info">(Kümülatif vergi matrahı için)</span></label>
+            <div class="input-wrapper">
+                <select id="month">
+                    <option value="1">Ocak (1. ay)</option>
+                    <option value="2">Şubat (2. ay)</option>
+                    <option value="3">Mart (3. ay)</option>
+                    <option value="4">Nisan (4. ay)</option>
+                    <option value="5">Mayıs (5. ay)</option>
+                    <option value="6">Haziran (6. ay)</option>
+                    <option value="7">Temmuz (7. ay)</option>
+                    <option value="8">Ağustos (8. ay)</option>
+                    <option value="9">Eylül (9. ay)</option>
+                    <option value="10">Ekim (10. ay)</option>
+                    <option value="11">Kasım (11. ay)</option>
+                    <option value="12">Aralık (12. ay)</option>
+                </select>
+            </div>
         </div>
 
+        <div class="form-group">
+            <label>Ek Seçenekler</label>
+            <div class="checkbox-group">
+                <label class="checkbox-item">
+                    <input type="checkbox" id="agimin" checked>
+                    AGİ uygulansın
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="disabled">
+                    Engelli indirimi
+                </label>
+            </div>
+        </div>
+
+        <button class="calc-btn" onclick="calculate()">🧮 Hesapla</button>
     </div>
 
-    <footer>
-        <p>2025 © Maaş Hesaplayıcı | Bu araç bilgilendirme amaçlıdır, resmi hesaplama için
-            <a href="https://www.gib.gov.tr" target="_blank" rel="noopener">GİB</a> sitesini ziyaret edin.
-        </p>
-        <p style="margin-top: 8px;">
-            Vergi oranları 2025 yılı güncel değerlerine göre hesaplanmaktadır.
-        </p>
-    </footer>
+    <div class="card result-card" id="result-card">
+        <div class="result-header">
+            <h2 id="result-title">Net Maaşınız</h2>
+            <div class="result-amount" id="result-amount">₺0</div>
+        </div>
 
-    <script>
-        // ============= AYARLAR =============
-        let direction = 'brut-net';
+        <table class="detail-table">
+            <tr class="highlight">
+                <td>Brüt Maaş</td>
+                <td id="r-brut">₺0</td>
+            </tr>
+            <tr class="negative">
+                <td>SGK İşçi Payı (%14)</td>
+                <td id="r-sgk">-₺0</td>
+            </tr>
+            <tr class="negative">
+                <td>İşsizlik Sigortası İşçi Payı (%1)</td>
+                <td id="r-issizlik">-₺0</td>
+            </tr>
+            <tr>
+                <td>Gelir Vergisi Matrahı</td>
+                <td id="r-matrah">₺0</td>
+            </tr>
+            <tr class="negative">
+                <td>Gelir Vergisi</td>
+                <td id="r-gelir">-₺0</td>
+            </tr>
+            <tr class="negative">
+                <td>Damga Vergisi (%0.759)</td>
+                <td id="r-damga">-₺0</td>
+            </tr>
+            <tr>
+                <td>Toplam Kesinti</td>
+                <td id="r-toplam-kesinti">₺0</td>
+            </tr>
+            <tr class="total">
+                <td>Net Maaş</td>
+                <td id="r-net">₺0</td>
+            </tr>
+        </table>
 
-        // 2025 Gelir Vergisi Dilimleri
-        const TAX_BRACKETS_2025 = [
-            { limit: 158000, rate: 0.15 },
-            { limit: 330000, rate: 0.20 },
-            { limit: 800000, rate: 0.27 },
-            { limit: 4300000, rate: 0.35 },
-            { limit: Infinity, rate: 0.40 }
-        ];
+        <div style="margin-top:25px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06);">
+            <table class="detail-table">
+                <tr>
+                    <td style="color:#6a6a8a;font-size:0.9rem;" colspan="2">İşveren Tarafı</td>
+                </tr>
+                <tr>
+                    <td>SGK İşveren Payı (%15.5)</td>
+                    <td id="r-sgk-isveren">₺0</td>
+                </tr>
+                <tr>
+                    <td>İşsizlik Sigortası İşveren Payı (%2)</td>
+                    <td id="r-issizlik-isveren">₺0</td>
+                </tr>
+                <tr class="total">
+                    <td>Toplam İşveren Maliyeti</td>
+                    <td id="r-isveren-maliyet">₺0</td>
+                </tr>
+            </table>
+        </div>
 
-        const SGK_EMPLOYEE = 0.14;
-        const UNEMPLOYMENT_EMPLOYEE = 0.01;
-        const SGK_EMPLOYER = 0.155;
-        const UNEMPLOYMENT_EMPLOYER = 0.02;
-        const STAMP_TAX = 0.00759;
+        <div class="tax-bracket">
+            <h3>📊 Gelir Vergisi Dilimi</h3>
+            <div class="bracket-bar">
+                <div class="bracket-fill" id="bracket-fill" style="width:0%"></div>
+            </div>
+            <div class="bracket-labels">
+                <span>%15</span>
+                <span>%20</span>
+                <span>%27</span>
+                <span>%35</span>
+                <span>%40</span>
+            </div>
+            <p style="margin-top:10px;font-size:0.9rem;color:#9a9ab0;" id="bracket-text">
+                Vergi diliminiz hesaplandıktan sonra burada görünecek.
+            </p>
+        </div>
+    </div>
 
-        // SGK Taban ve Tavan (2025 - yaklaşık değerler, güncellenebilir)
-        const SGK_TABAN_2025 = 22104; // Asgari ücret brüt
-        const SGK_TAVAN_2025 = 165780; // SGK tavan
+    <div class="faq-section">
+        <h2>❓ Sıkça Sorulan Sorular</h2>
 
-        // ============= YÖN DEĞİŞTİRME =============
-        function setDirection(dir) {
-            direction = dir;
-            document.getElementById('btn-brut-net').classList.toggle('active', dir === 'brut-net');
-            document.getElementById('btn-net-brut').classList.toggle('active', dir === 'net-brut');
-            document.getElementById('salary-label').textContent =
-                dir === 'brut-net' ? 'Brüt Maaş Tutarı' : 'Net Maaş Tutarı (Elde etmek istediğiniz)';
-            document.getElementById('salary').placeholder =
-                dir === 'brut-net' ? 'Örn: 50000' : 'Örn: 35000';
-        }
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Brüt maaş ile net maaş arasındaki fark nedir?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Brüt maaş, herhangi bir kesinti yapılmadan önceki toplam maaş tutarıdır. Net maaş ise SGK primi, gelir vergisi ve damga vergisi gibi yasal kesintiler düşüldükten sonra elinize geçen tutardır.</p>
+            </div>
+        </article>
 
-        // ============= GELİR VERGİSİ HESAPLAMA =============
-        function calculateIncomeTax(cumulativeBase, currentMatrah) {
-            const prevBase = cumulativeBase - currentMatrah;
-            const totalTax = calcTaxForAmount(cumulativeBase);
-            const prevTax = calcTaxForAmount(prevBase);
-            return totalTax - prevTax;
-        }
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>2025 yılı gelir vergisi dilimleri nelerdir?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>2025 yılı gelir vergisi dilimleri: 158.000 TL'ye kadar %15, 330.000 TL'ye kadar %20, 800.000 TL'ye kadar %27, 4.300.000 TL'ye kadar %35, 4.300.000 TL üzeri %40 oranında uygulanmaktadır.</p>
+            </div>
+        </article>
 
-        function calcTaxForAmount(amount) {
-            if (amount <= 0) return 0;
-            let tax = 0;
-            let prev = 0;
-            for (const bracket of TAX_BRACKETS_2025) {
-                if (amount <= bracket.limit) {
-                    tax += (amount - prev) * bracket.rate;
-                    break;
-                } else {
-                    tax += (bracket.limit - prev) * bracket.rate;
-                    prev = bracket.limit;
-                }
-            }
-            return tax;
-        }
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>SGK kesintisi nasıl hesaplanır?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>SGK işçi payı brüt maaşın %14'ü, işsizlik sigortası işçi payı ise %1'i oranında kesilir. İşveren tarafında ise SGK payı %15.5, işsizlik sigortası %2 olarak hesaplanır.</p>
+            </div>
+        </article>
 
-        function getCurrentBracketRate(cumulativeBase) {
-            for (const bracket of TAX_BRACKETS_2025) {
-                if (cumulativeBase <= bracket.limit) {
-                    return bracket.rate;
-                }
-            }
-            return 0.40;
-        }
+        <article class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Damga vergisi oranı nedir?</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Maaş bordrosunda uygulanan damga vergisi oranı binde 7.59'dur (%0.759). Bu oran brüt maaş üzerinden hesaplanır.</p>
+            </div>
+        </article>
+    </div>
 
-        function getBracketPercentage(cumulativeBase) {
-            const maxRelevant = 4300000;
-            return Math.min((cumulativeBase / maxRelevant) * 100, 100);
-        }
+</div>
 
-        // ============= ANA HESAPLAMA =============
-        function calculate() {
-            const salaryInput = parseFloat(document.getElementById('salary').value);
-            const month = parseInt(document.getElementById('month').value);
+<footer>
+    <p>© 2025 MaaşHesapla |
+        <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+        <a href="/hakkimizda.html">Hakkımızda</a>
+        <a href="/iletisim.html">İletişim</a>
+    </p>
+    <p style="margin-top:8px;">2025 yılı güncel vergi oranlarına göre hesaplanmaktadır. Bilgilendirme amaçlıdır.</p>
+</footer>
 
-            if (!salaryInput || salaryInput <= 0) {
-                alert('Lütfen geçerli bir maaş tutarı girin.');
-                return;
-            }
+<script>
+    // VERİLER
+    const VERGI_VERILERI = {
+        yil: 2025,
+        sgkTavan: 165780,
+        damgaVergisi: 0.00759,
+        sgkIsci: 0.14,
+        issizlikIsci: 0.01,
+        sgkIsveren: 0.155,
+        issizlikIsveren: 0.02,
+        gelirVergisiDilimleri: [
+            { limit: 158000, oran: 0.15 },
+            { limit: 330000, oran: 0.20 },
+            { limit: 800000, oran: 0.27 },
+            { limit: 4300000, oran: 0.35 },
+            { limit: Infinity, oran: 0.40 }
+        ]
+    };
 
-            let brut, net;
+    let direction = 'brut-net';
 
-            if (direction === 'brut-net') {
-                brut = salaryInput;
+    function setDirection(dir) {
+        direction = dir;
+        document.getElementById('btn-brut-net').classList.toggle('active', dir === 'brut-net');
+        document.getElementById('btn-net-brut').classList.toggle('active', dir === 'net-brut');
+        document.getElementById('salary-label').textContent =
+            dir === 'brut-net' ? 'Brüt Maaş Tutarı' : 'Net Maaş Tutarı';
+        document.getElementById('salary').placeholder =
+            dir === 'brut-net' ? 'Örn: 50000' : 'Örn: 35000';
+    }
+
+    function calcTaxForAmount(amount) {
+        if (amount <= 0) return 0;
+        let tax = 0;
+        let prev = 0;
+        for (const bracket of VERGI_VERILERI.gelirVergisiDilimleri) {
+            if (amount <= bracket.limit) {
+                tax += (amount - prev) * bracket.oran;
+                break;
             } else {
-                // Net'ten brüte iteratif hesaplama
-                brut = findBrutFromNet(salaryInput, month);
+                tax += (bracket.limit - prev) * bracket.oran;
+                prev = bracket.limit;
             }
+        }
+        return tax;
+    }
 
-            // SGK matrahı (tavan kontrolü)
-            const sgkMatrah = Math.min(brut, SGK_TAVAN_2025);
+    function calculateIncomeTax(cumulativeBase, currentMatrah) {
+        const prevBase = cumulativeBase - currentMatrah;
+        return calcTaxForAmount(cumulativeBase) - calcTaxForAmount(prevBase);
+    }
 
-            // SGK Kesintileri
-            const sgkEmployee = sgkMatrah * SGK_EMPLOYEE;
-            const unemploymentEmployee = sgkMatrah * UNEMPLOYMENT_EMPLOYEE;
+    function getCurrentBracketRate(cumulativeBase) {
+        for (const bracket of VERGI_VERILERI.gelirVergisiDilimleri) {
+            if (cumulativeBase <= bracket.limit) return bracket.oran;
+        }
+        return 0.40;
+    }
 
-            // Gelir Vergisi Matrahı
-            const gelirMatrah = brut - sgkEmployee - unemploymentEmployee;
+    function findBrutFromNet(targetNet, month) {
+        let low = targetNet;
+        let high = targetNet * 2.5;
+        for (let i = 0; i < 100; i++) {
+            const mid = (low + high) / 2;
+            const sgkMatrah = Math.min(mid, VERGI_VERILERI.sgkTavan);
+            const sgk = sgkMatrah * VERGI_VERILERI.sgkIsci;
+            const issizlik = sgkMatrah * VERGI_VERILERI.issizlikIsci;
+            const matrah = mid - sgk - issizlik;
+            const cumBase = matrah * month;
+            const tax = calculateIncomeTax(cumBase, matrah);
+            const damga = mid * VERGI_VERILERI.damgaVergisi;
+            const calcNet = mid - sgk - issizlik - tax - damga;
+            if (Math.abs(calcNet - targetNet) < 0.01) return mid;
+            else if (calcNet > targetNet) high = mid;
+            else low = mid;
+        }
+        return (low + high) / 2;
+    }
 
-            // Kümülatif matrah (önceki aylar + bu ay)
-            const cumulativeBase = gelirMatrah * month;
-            const prevCumulativeBase = gelirMatrah * (month - 1);
+    function calculate() {
+        const salaryInput = parseFloat(document.getElementById('salary').value);
+        const month = parseInt(document.getElementById('month').value);
 
-            // Gelir Vergisi
-            const incomeTax = calculateIncomeTax(cumulativeBase, gelirMatrah);
-
-            // Damga Vergisi
-            const stampTax = brut * STAMP_TAX;
-
-            // Toplam Kesinti
-            const totalDeduction = sgkEmployee + unemploymentEmployee + incomeTax + stampTax;
-
-            // Net Maaş
-            net = brut - totalDeduction;
-
-            // İşveren Maliyeti
-            const sgkEmployer = sgkMatrah * SGK_EMPLOYER;
-            const unemploymentEmployer = sgkMatrah * UNEMPLOYMENT_EMPLOYER;
-            const totalEmployerCost = brut + sgkEmployer + unemploymentEmployer;
-
-            // Vergi dilimi bilgisi
-            const currentRate = getCurrentBracketRate(cumulativeBase);
-            const bracketPercent = getBracketPercentage(cumulativeBase);
-
-            // Sonuçları göster
-            displayResults({
-                brut, net, sgkEmployee, unemploymentEmployee,
-                gelirMatrah, incomeTax, stampTax, totalDeduction,
-                sgkEmployer, unemploymentEmployer, totalEmployerCost,
-                currentRate, bracketPercent, cumulativeBase, month
-            });
+        if (!salaryInput || salaryInput <= 0) {
+            alert('Lütfen geçerli bir maaş tutarı girin.');
+            return;
         }
 
-        function findBrutFromNet(targetNet, month) {
-            // Binary search ile brüt maaş bul
-            let low = targetNet;
-            let high = targetNet * 2.5;
-
-            for (let i = 0; i < 100; i++) {
-                const mid = (low + high) / 2;
-                const sgkMatrah = Math.min(mid, SGK_TAVAN_2025);
-                const sgk = sgkMatrah * SGK_EMPLOYEE;
-                const issizlik = sgkMatrah * UNEMPLOYMENT_EMPLOYEE;
-                const matrah = mid - sgk - issizlik;
-                const cumBase = matrah * month;
-                const tax = calculateIncomeTax(cumBase, matrah);
-                const damga = mid * STAMP_TAX;
-                const calcNet = mid - sgk - issizlik - tax - damga;
-
-                if (Math.abs(calcNet - targetNet) < 0.01) {
-                    return mid;
-                } else if (calcNet > targetNet) {
-                    high = mid;
-                } else {
-                    low = mid;
-                }
-            }
-            return (low + high) / 2;
+        let brut;
+        if (direction === 'brut-net') {
+            brut = salaryInput;
+        } else {
+            brut = findBrutFromNet(salaryInput, month);
         }
 
-        // ============= SONUÇLARI GÖSTER =============
-        function displayResults(r) {
-            const fmt = (n) => '₺' + n.toLocaleString('tr-TR', {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            });
+        const sgkMatrah = Math.min(brut, VERGI_VERILERI.sgkTavan);
+        const sgkEmployee = sgkMatrah * VERGI_VERILERI.sgkIsci;
+        const unemploymentEmployee = sgkMatrah * VERGI_VERILERI.issizlikIsci;
+        const gelirMatrah = brut - sgkEmployee - unemploymentEmployee;
+        const cumulativeBase = gelirMatrah * month;
+        const incomeTax = calculateIncomeTax(cumulativeBase, gelirMatrah);
+        const stampTax = brut * VERGI_VERILERI.damgaVergisi;
+        const totalDeduction = sgkEmployee + unemploymentEmployee + incomeTax + stampTax;
+        const net = brut - totalDeduction;
+        const sgkEmployer = sgkMatrah * VERGI_VERILERI.sgkIsveren;
+        const unemploymentEmployer = sgkMatrah * VERGI_VERILERI.issizlikIsveren;
+        const totalEmployerCost = brut + sgkEmployer + unemploymentEmployer;
+        const currentRate = getCurrentBracketRate(cumulativeBase);
+        const bracketPercent = Math.min((cumulativeBase / 4300000) * 100, 100);
 
-            document.getElementById('result-card').classList.add('show');
-
-            if (direction === 'brut-net') {
-                document.getElementById('result-title').textContent = 'Net Maaşınız';
-                document.getElementById('result-amount').innerHTML = fmt(r.net);
-            } else {
-                document.getElementById('result-title').textContent = 'Brüt Maaşınız';
-                document.getElementById('result-amount').innerHTML = fmt(r.brut);
-            }
-
-            document.getElementById('r-brut').textContent = fmt(r.brut);
-            document.getElementById('r-sgk').textContent = '-' + fmt(r.sgkEmployee);
-            document.getElementById('r-issizlik').textContent = '-' + fmt(r.unemploymentEmployee);
-            document.getElementById('r-matrah').textContent = fmt(r.gelirMatrah);
-            document.getElementById('r-gelir').textContent = '-' + fmt(r.incomeTax);
-            document.getElementById('r-damga').textContent = '-' + fmt(r.stampTax);
-            document.getElementById('r-toplam-kesinti').textContent = '-' + fmt(r.totalDeduction);
-            document.getElementById('r-net').textContent = fmt(r.net);
-
-            document.getElementById('r-sgk-isveren').textContent = fmt(r.sgkEmployer);
-            document.getElementById('r-issizlik-isveren').textContent = fmt(r.unemploymentEmployer);
-            document.getElementById('r-isveren-maliyet').textContent = fmt(r.totalEmployerCost);
-
-            // Vergi dilimi
-            document.getElementById('bracket-fill').style.width = r.bracketPercent + '%';
-            document.getElementById('bracket-text').textContent =
-                `${r.month}. ay sonu kümülatif vergi matrahınız: ${fmt(r.cumulativeBase)} → Mevcut dilim: %${(r.currentRate * 100).toFixed(0)}`;
-
-            // Sonuç kartına kaydır
-            document.getElementById('result-card').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-
-        // ============= SSS TOGGLE =============
-        function toggleFaq(el) {
-            const item = el.parentElement;
-            item.classList.toggle('open');
-        }
-
-        // Enter tuşuyla hesaplama
-        document.getElementById('salary').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') calculate();
+        displayResults({
+            brut, net, sgkEmployee, unemploymentEmployee,
+            gelirMatrah, incomeTax, stampTax, totalDeduction,
+            sgkEmployer, unemploymentEmployer, totalEmployerCost,
+            currentRate, bracketPercent, cumulativeBase, month
         });
-    </script>
+    }
+
+    function displayResults(r) {
+        const fmt = (n) => '₺' + n.toLocaleString('tr-TR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+        document.getElementById('result-card').classList.add('show');
+        document.getElementById('result-title').textContent =
+            direction === 'brut-net' ? 'Net Maaşınız' : 'Brüt Maaşınız';
+        document.getElementById('result-amount').textContent =
+            direction === 'brut-net' ? fmt(r.net) : fmt(r.brut);
+
+        document.getElementById('r-brut').textContent = fmt(r.brut);
+        document.getElementById('r-sgk').textContent = '-' + fmt(r.sgkEmployee);
+        document.getElementById('r-issizlik').textContent = '-' + fmt(r.unemploymentEmployee);
+        document.getElementById('r-matrah').textContent = fmt(r.gelirMatrah);
+        document.getElementById('r-gelir').textContent = '-' + fmt(r.incomeTax);
+        document.getElementById('r-damga').textContent = '-' + fmt(r.stampTax);
+        document.getElementById('r-toplam-kesinti').textContent = '-' + fmt(r.totalDeduction);
+        document.getElementById('r-net').textContent = fmt(r.net);
+        document.getElementById('r-sgk-isveren').textContent = fmt(r.sgkEmployer);
+        document.getElementById('r-issizlik-isveren').textContent = fmt(r.unemploymentEmployer);
+        document.getElementById('r-isveren-maliyet').textContent = fmt(r.totalEmployerCost);
+
+        document.getElementById('bracket-fill').style.width = r.bracketPercent + '%';
+        document.getElementById('bracket-text').textContent =
+            `${r.month}. ay sonu kümülatif matrah: ${fmt(r.cumulativeBase)} → Mevcut dilim: %${(r.currentRate * 100).toFixed(0)}`;
+
+        document.getElementById('result-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function toggleFaq(el) {
+        el.parentElement.classList.toggle('open');
+    }
+
+    document.getElementById('salary').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') calculate();
+    });
+</script>
 
 </body>
 </html>
